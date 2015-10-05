@@ -1,4 +1,4 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)
 
 ## Objectives
 - Using `this` to refer to object properties from within a method.
@@ -156,3 +156,9 @@ Create constructor functions for the User and Meal objects for the previous lab.
 
 
 There are tests for this, so feel free to use `grunt test` to check your code's functionality.
+
+[License](LICENSE)
+------------------
+
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
