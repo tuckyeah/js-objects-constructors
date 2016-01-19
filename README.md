@@ -9,7 +9,7 @@
 
 ## Objectives
 
--   Use `this` to create a constructor function.
+-   Attach properties to a new object using the constructor function
 
 ## Constructors
 
