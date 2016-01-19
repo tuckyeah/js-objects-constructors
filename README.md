@@ -121,8 +121,12 @@ Refactor the run tracker code you made in the [previous
 lesson](https://github.com/ga-wdi-boston/js-objects-this) to use constructor
 functions instead of copying methods between object literals.
 
+Leave out the methods for now. We'll add them back very shortly.
+
 There are no tests for this (yet), but you can still use `grunt nag` to lint
 your code and look for syntax errors.
+
+You should have at least two constructor functions when you've finished.
 
 ## [License](LICENSE)
 
