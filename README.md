@@ -55,13 +55,9 @@ This new object we created might be referred to as an 'instance' of Person.
 
 ## Lab: Constructors
 
-Create constructor functions for the User and Meal objects for the previous lab.
-The constructor for User should take `name`, `age`, and `calorieTarget` as
-arguments. The constructor for Meal should take all of its parameters (`title`,
-`date`, `description`)
-
-There are tests for this, so feel free to use `grunt test` to check your code's
-functionality.
+Refactor the run tracker code you made in the [previous
+lesson](https://github.com/ga-wdi-boston/js-objects-this) to use constructor
+functions instead of copying methods between object literals.
 
 ## [License](LICENSE)
 
