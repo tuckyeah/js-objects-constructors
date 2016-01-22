@@ -8,7 +8,7 @@
 
 ## Objectives
 
--   Attach properties to a new object using the constructor function
+-   Attach attributes to a new object using the constructor function
 
 ## Preparation
 
