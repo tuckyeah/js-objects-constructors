@@ -14,7 +14,9 @@
 
 1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
     this repository.
-1.  Install dependencies with `npm install`.
+1.  Change to the new directory.
+1.  Install dependencies.
+1.  Create and checkout a new branch, `training`
 
 ## Similar Objects
 
@@ -22,42 +24,44 @@ Now that we're using objects to solve problems, it might make sense to have a
 way to make multiple objects with the same kind of format - an 'object factory',
 designed to construct objects of a particular type.
 
-Suppose we had the following object describing my favorite comic book hero:
+Suppose we had the following object describing a favorite comic book hero:
 
 ```js
 let batman = {
   name: 'Bruce Wayne',
   alias: 'The Bat-man',
 
-  power: function() {
-    return 'Super wealthy and super pissed off';
+  usePower: function() {
+    return 'Spend money and hit people';
   }
 }
 ```
 
-Now, I want to have an object describing another hero:
+And now we want another object describing a different hero:
 
 ```js
-let superman = {
-  name: 'Clark Kent',
-  alias: 'Superman',
+let wonderWoman = {
+  name: 'Diana Prince',
+  alias: 'Wonder Woman',
 
-  power: function() {
-    return 'Kind of arrogant, but super nice';
+  usePower: function() {
+    return 'Deflect bullets with bracelets';
   }
 }
 ```
 
-Not only do I hate copying-and-pasting because I'm lazy, but *copy-and-paste is
-one of the biggest source of errors* when programming.
+Why is this not a good answer?
+
+Because *copy-and-paste is one of the biggest sources of errors* in software
+ development.
 
 ## Lab: Model a Hero
 
-What features do `batman` and `superman` share? Remember to think about
-attributes and methods when you're modeling. Also take a note of what differs
+What features do `batman` and `wonderWoman` share?  Remember to think about
+attributes and methods when you're modeling.  Also take note of what differs
 between them.
 
-Make a diagram of our `Hero` entity.
+Make a diagram of our `Hero` entity based on the above objects.
 
 ## Constructors
 
@@ -74,9 +78,15 @@ reduce duplication in our objects, while allowing the difference to vary by
 only defining the differences when we *construct* the new object.
 
 ```js
-const Hero = function(name, alias) {
+const usePower = function () {
+  return this._power;
+};
+
+const Hero = function (name, alias, power) {
   this.name = name;
   this.alias = alias;
+  this.power = power;
+  this.usePower = usePower;
 };
 ```
 
@@ -91,37 +101,44 @@ const foo = 'baz'; // wrong!
 What does my choice of `const` tell you about my expectations for constructor
 functions?
 
-Look back at the `Hero` constructor. Why don't we define methods inside the
-constructor? Because it is a Bad Idea™. JavaScript will totally let you, but
-**Don't do it.**
+We defined a method inside the the `Hero` constructor, but doing that is a Bad
+ Idea<sup>TM</sup>.  JavaScript allows it, but **don't do it**.
+We'll see the right way to achieve a near identical and preferred result
+ shortly.
 
-Now, let's make `batman` using the constructor function instead of an object
-literal:
+Now, let's create `wonderWoman` using the constructor function instead of an
+ object literal:
 
 ```js
-let batman = new Hero('Bruce Wayne', 'The Bat-man');
+let wonderWoman = new Hero('Diana Prince',
+                           'Wonder Woman',
+                           'Deflect bullets with bracelets');
 //=> undefined
 
-batman;
-// => { name: 'Bruce Wayne', alias: 'The Bat-man' }
+wonderWoman;
+/* => { name: 'Diana Prince',
+  alias: 'Wonder Woman',
+  power: 'Deflects bullets with bracelets',
+  usePower: [Function] }
+  */
 ```
 
-The trick is `new`, a JavaScript keyword. `new` does the following, in order:
+`new`, a JavaScript keyword, does the following, in order:
 
-1.  creates a new empty object (`{}`)
-1.  attaches the constructor to the object as a property
-1.  invokes the constructor function on the new object
+1.  creates an empty object (`{}`)
+1.  attaches the constructor function to the object as a property
+1.  invokes the constructor function as a method on the object
 1.  returns the object
 
-This new object we created is sometimes called an 'instance' of type `Hero`.
+A new object created this way is sometimes called an 'instance' of type `Hero`.
 
 ## Lab: Refactor Object Literals Using Constructors
 
-Refactor the run tracker code you made in the [previous
-lesson](https://github.com/ga-wdi-boston/js-objects-this) to use constructor
-functions instead of copying methods between object literals.
+Refactor the run tracker code from the [previous
+ lesson](https://github.com/ga-wdi-boston/js-objects-this) to use constructor
+functions instead of copying properties between object literals.
 
-Leave out the methods for now. We'll add them back very shortly.
+Leave the methods out for now. We'll add them back shortly.
 
 There are no tests for this (yet), but you can still use `grunt nag` to lint
 your code and look for syntax errors.
