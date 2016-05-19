@@ -85,10 +85,16 @@ const usePower = function () {
 const Hero = function (name, alias, power) {
   this.name = name;
   this.alias = alias;
-  this.power = power;
+  this._power = power;
   this.usePower = usePower;
 };
 ```
+
+It is conventional to use a leading underscore (`_`) on a property name to
+indicate to future developers that the property is **not** intended for direct
+access or assignment. Nothing in JavaScript enforces this convention, but
+developers should consider any property with a leading underscore *private* to
+object (not accessible from the outside).
 
 `const` is just like `let`, except `const` will not let you re-assign a value
 to the same name.
