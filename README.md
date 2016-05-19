@@ -33,8 +33,8 @@ let batman = {
 
   usePower: function() {
     return 'Spend money and hit people';
-  }
-}
+  },
+};
 ```
 
 And now we want another object describing a different hero:
@@ -46,8 +46,8 @@ let wonderWoman = {
 
   usePower: function() {
     return 'Deflect bullets with bracelets';
-  }
-}
+  },
+};
 ```
 
 Why is this not a good answer?
