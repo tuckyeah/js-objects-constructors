@@ -5,11 +5,11 @@ const expect = chai.expect;
 
 const runs = require('../lib/runs');
 
-xdescribe('runs', function () {
+describe('runs', function () {
 
-  const user = {}; // = new runs.User('Person McFace', 'wdi@personmcface.com');
-  // user.runs.push(new runs.Run('2015-05-25 15:00', 1200, 600));
-  // user.runs.push(new runs.Run('2015-05-25 15:00', 1400, 800));
+  const user = new runs.User('Person McFace', 'wdi@personmcface.com');
+  user.runs.push(new runs.Run('2015-05-25 15:00', 1200, 600));
+  user.runs.push(new runs.Run('2015-05-25 15:00', 1400, 800));
 
   describe('user', function () {
     it('has the correct name and e-mail address', function () {
