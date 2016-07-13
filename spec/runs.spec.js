@@ -5,18 +5,18 @@ const expect = chai.expect;
 
 const runs = require('../lib/runs');
 
-const user = new runs.User('Person McFace', 'wdi@personmcface.com');
-user.runs.push(new runs.Run('2015-05-25 15:00', 1200, 600));
-user.runs.push(new runs.Run('2015-05-25 15:00', 1400, 800));
+xdescribe('runs', function () {
 
-describe('user', function () {
-  it('has the correct name and e-mail address', function () {
-    expect(user.name).to.equal('Person McFace');
-    expect(user.email).to.equal('wdi@personmcface.com');
+  const user = {}; // = new runs.User('Person McFace', 'wdi@personmcface.com');
+  // user.runs.push(new runs.Run('2015-05-25 15:00', 1200, 600));
+  // user.runs.push(new runs.Run('2015-05-25 15:00', 1400, 800));
+
+  describe('user', function () {
+    it('has the correct name and e-mail address', function () {
+      expect(user.name).to.equal('Person McFace');
+      expect(user.email).to.equal('wdi@personmcface.com');
+    });
   });
-});
-
-describe('runs', function () {
 
   describe('length', function () {
     it('is correct', function () {
