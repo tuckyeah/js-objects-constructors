@@ -102,7 +102,8 @@ to the same name.
 
 ```js
 const foo = 'bar';
-const foo = 'baz'; // wrong!
+const foo = 'baz'; // wrong
+foo = 'baz'; // explode!
 ```
 
 What does my choice of `const` tell you about my expectations for constructor
