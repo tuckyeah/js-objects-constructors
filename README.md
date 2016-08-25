@@ -9,6 +9,7 @@
 ## Objectives
 
 -   Attach attributes to a new object using the constructor function
+-   Recall the cost of defining methods inside a constructor function
 
 ## Preparation
 
