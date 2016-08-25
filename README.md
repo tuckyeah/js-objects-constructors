@@ -9,6 +9,7 @@
 ## Objectives
 
 -   Attach attributes to a new object using the constructor function
+-   Recall the cost of defining methods inside a constructor function
 
 ## Preparation
 
@@ -101,7 +102,8 @@ to the same name.
 
 ```js
 const foo = 'bar';
-const foo = 'baz'; // wrong!
+const foo = 'baz'; // wrong
+foo = 'baz'; // explode!
 ```
 
 What does my choice of `const` tell you about my expectations for constructor
@@ -153,5 +155,6 @@ You should have at least two constructor functions when you've finished.
 
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or
+    alternative licensing, please contact legal@ga.co.
